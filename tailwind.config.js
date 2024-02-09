@@ -8,7 +8,7 @@ export default {
       },
       colors: {
         primaryBgc: "#0D0D0D",
-        buttonBgc: "#012606",
+        buttonBgc: "#A61103",
       },
       fontFamily: {
         primaryFont: "Protest Strike",

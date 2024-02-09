@@ -15,7 +15,7 @@ const Header = () => {
         </div>
         <Navigation isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
       </div>
-      <MobileNavigation isOpenMenu={isOpenMenu} />
+      <MobileNavigation isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
     </header>
   );
 };
