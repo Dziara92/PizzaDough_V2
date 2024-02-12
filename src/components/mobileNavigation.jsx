@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import { menu } from "../data/dataFile";
 const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
   return (
@@ -12,13 +13,14 @@ const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
       <ul className="w-1/2 mx-auto my-[20px] flex flex-col items-center justify-center gap-4 text-lg  font-semibold bg-buttonBgc">
         {menu.map((menu) => {
           return (
-            <li
-              className="cursor-pointer text-white transition ease-linear duration-100 hover:-translate-y-[1px] "
-              key={menu.id}
-              onClick={() => setIsOpenMenu(!isOpenMenu)}
-            >
-              {menu.name}
-            </li>
+            <Link to={menu.url} key={menu.id}>
+              <li
+                className="cursor-pointer text-white transition ease-linear duration-100 hover:-translate-y-[1px] "
+                onClick={() => setIsOpenMenu(!isOpenMenu)}
+              >
+                {menu.name}
+              </li>
+            </Link>
           );
         })}
       </ul>
