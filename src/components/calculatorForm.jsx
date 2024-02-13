@@ -14,12 +14,13 @@ const CalculatorForm = ({ setResult }) => {
     let salt = ((flour * 1.8) / 100).toFixed(1);
     watter = (flour - watter + 10).toFixed(0);
     flour = (flour - watter - salt).toFixed(0);
+    let yeast = ((flour * 0.12) / 100).toFixed(1);
 
-    setResult({ flour, watter, salt });
+    setResult({ flour, watter, salt, yeast });
   };
 
   return (
-    <form className="flex flex-col w-4/5 mx-auto" onSubmit={handleCalculate}>
+    <form className="flex flex-col  mx-auto" onSubmit={handleCalculate}>
       <label htmlFor="pizza_style" className=" mb-1">
         Rodzaj pizzy
       </label>

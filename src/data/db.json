@@ -1,0 +1,16 @@
+{
+  "produkty": [
+    {
+      "id": 1,
+      "flour": "Caputo"
+    },
+    {
+      "id": 2,
+      "flour": "Caputo Red"
+    },
+    {
+      "id": 3,
+      "flour": "Caputo Blue"
+    }
+  ]
+}

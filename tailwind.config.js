@@ -13,6 +13,15 @@ export default {
       fontFamily: {
         primaryFont: "Protest Strike",
       },
+      keyframes: {
+        slideDown: {
+          "0%": { transform: "translateY(-10px)", opacity: "0" },
+          "100%": { transform: "translateY(0px)", opacity: "1" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.8s ease-in-out",
+      },
     },
   },
   plugins: [],
