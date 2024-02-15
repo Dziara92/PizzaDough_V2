@@ -2,15 +2,23 @@
   "produkty": [
     {
       "id": 1,
-      "flour": "Caputo"
+      "flour": "Caputo",
+      "category": "Mąka"
     },
     {
       "id": 2,
-      "flour": "Caputo Red"
+      "flour": "Caputo Red",
+      "category": "Mąka"
     },
     {
       "id": 3,
-      "flour": "Caputo Blue"
+      "flour": "Caputo Blue",
+      "category": "Mąka"
+    },
+    {
+      "id": 4,
+      "flour": "Ariete piec",
+      "category": "Sprzęt"
     }
   ]
 }

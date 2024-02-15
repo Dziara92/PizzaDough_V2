@@ -1,5 +1,8 @@
 import Loading from "../components/loading";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
+import fetchProduct from "../utility/fetchProduct";
+import filterCategory from "../utility/filterCategory";
+import reducer from "../utility/producktReducer";
 
 const linkData = "http://localhost:3001/produkty";
 
@@ -9,22 +12,20 @@ const ShopPage = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch(linkData)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error(`ups! Coś poszło nie tak!  ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
+    fetchProduct(linkData, setLoading, setError, setData);
   }, []);
+
+  // const initialState = {
+  //   category: data,
+  // };
+
+  // const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleCategory = (e) => {
+    fetchProduct(linkData, setLoading, setError, setData);
+    let category = e.target.value;
+    filterCategory(category, data, setData);
+  };
 
   if (error) {
     return (
@@ -42,6 +43,14 @@ const ShopPage = () => {
         Sklep
       </h1>
       <div className="container">
+        <div className=" flex flex-row justify-center items-center gap-4 mb-6">
+          <p className=" font-semibold">Kategorie:</p>
+          <select className=" block px-3 py-2 w-2/4" onChange={handleCategory}>
+            <option value="All">Wszystko</option>
+            <option value="Mąka">Mąki</option>
+            <option value="Sprzęt">Sprzęt</option>
+          </select>
+        </div>
         {loading ? (
           <Loading />
         ) : (
