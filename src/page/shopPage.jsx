@@ -1,30 +1,41 @@
+import { useState, useEffect } from "react";
 import Loading from "../components/loading";
-import { useState, useEffect, useReducer } from "react";
-import fetchProduct from "../utility/fetchProduct";
-import filterCategory from "../utility/filterCategory";
-import reducer from "../utility/producktReducer";
+import Products from "../components/products";
+import fetchProducts from "../utility/fetchProducts";
 
 const linkData = "http://localhost:3001/produkty";
 
 const ShopPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [data, setData] = useState();
+  const [dataProduct, setDataProduct] = useState([]);
+  const [itemProducts, setItemProducts] = useState([]);
 
   useEffect(() => {
-    fetchProduct(linkData, setLoading, setError, setData);
+    fetchProducts(
+      linkData,
+      setDataProduct,
+      setItemProducts,
+      setLoading,
+      setError
+    );
   }, []);
 
-  // const initialState = {
-  //   category: data,
-  // };
+  const filterCategory = (e) => {
+    let value = e.target.value;
+    if (value === "All") {
+      setItemProducts(dataProduct);
+    }
 
-  // const [state, dispatch] = useReducer(reducer, initialState);
+    if (value === "Mąka") {
+      const newProduct = dataProduct.filter((item) => item.category === value);
+      setItemProducts(newProduct);
+    }
 
-  const handleCategory = (e) => {
-    fetchProduct(linkData, setLoading, setError, setData);
-    let category = e.target.value;
-    filterCategory(category, data, setData);
+    if (value === "Sprzęt") {
+      const newProduct = dataProduct.filter((item) => item.category === value);
+      setItemProducts(newProduct);
+    }
   };
 
   if (error) {
@@ -45,7 +56,7 @@ const ShopPage = () => {
       <div className="container">
         <div className=" flex flex-row justify-center items-center gap-4 mb-6">
           <p className=" font-semibold">Kategorie:</p>
-          <select className=" block px-3 py-2 w-2/4" onChange={handleCategory}>
+          <select className=" block px-3 py-2 w-2/4" onChange={filterCategory}>
             <option value="All">Wszystko</option>
             <option value="Mąka">Mąki</option>
             <option value="Sprzęt">Sprzęt</option>
@@ -54,15 +65,11 @@ const ShopPage = () => {
         {loading ? (
           <Loading />
         ) : (
-          data.map((item) => {
-            return (
-              <div key={item.id}>
-                <p>
-                  {item.id}. {item.flour}
-                </p>
-              </div>
-            );
-          })
+          <div className="flex  mt-10 flex-wrap">
+            {itemProducts.map((item) => {
+              return <Products key={item.id} {...item} />;
+            })}
+          </div>
         )}
       </div>
     </div>

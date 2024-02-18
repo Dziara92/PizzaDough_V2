@@ -4,6 +4,7 @@ import ContactPage from "./page/contactPage";
 import MainPage from "./page/mainPage";
 import ShopPage from "./page/shopPage";
 import CalculatorPage from "./page/calculatorPage";
+import SinglePage from "./page/singlePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="calculator" element={<CalculatorPage />} />
         <Route path="shop" element={<ShopPage />} />
+        <Route path="shop/:name" element={<SinglePage />} />
         <Route path="contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>

@@ -2,23 +2,38 @@
   "produkty": [
     {
       "id": 1,
-      "flour": "Caputo",
-      "category": "Mąka"
+      "flour": "Mąka pszenna typu 00 Pizzeria 1kg Caputo Nr 1 na świecie!",
+      "name": "Mąka-pszenna-typu-00-Pizzeria-1kg-Caputo-Nr-1-na-świecie!",
+      "category": "Mąka",
+      "desc": "Mąka Pizzeria typu 00 Caputo to rewelacyjna mąka pochodząca z Włoch dedykowana pizzy neapolitańskiej. Jest tak drobno mielona, że wygląda jak śnieżny pył. To mąka z elastycznym glutenem najlepsza do ciasta, które wymaga długiej fermentacji."
     },
     {
       "id": 2,
-      "flour": "Caputo Red",
-      "category": "Mąka"
+      "flour": "Mąka pszenna Pizza Focaccia 00 Midi 1kg Molino Grassi",
+      "name": "Mąka-pszenna-Pizza-Focaccia-00-Midi-1kg-Molino-Grassi",
+      "category": "Mąka",
+      "desc": "Mąka pszenna zaprojektowana do przygotowywania tradycyjnych włoskich wypieków, takich jak pizza i focaccia. Jej właściwości sprawiają, że ciasto staje się elastyczne i łatwe do uformowania w cienkie krążki na pizzę lub płaski placek na focaccię. "
     },
     {
       "id": 3,
-      "flour": "Caputo Blue",
-      "category": "Mąka"
+      "flour": "Mąka pszenna typ 00 Pizzeria 5kg Caputo",
+      "name": "Mąka-pszenna-typ-00-Pizzeria-5kg-Caputo",
+      "category": "Mąka",
+      "desc": "Mąka Pizzeria typu 00 Caputo to rewelacyjna mąka pochodząca z Włoch dedykowana pizzy neapolitańskiej. Jest tak drobno mielona, że wygląda jak śnieżny pył. To mąka z elastycznym glutenem najlepsza do ciasta, które wymaga długiej fermentacji."
     },
     {
       "id": 4,
       "flour": "Ariete piec",
-      "category": "Sprzęt"
+      "name": "Ariete-piec",
+      "category": "Sprzęt",
+      "desc": "Piec do pizzy, moc 1200 W, 5 poziomów pieczenia (I 120˚C, II 180˚C, III 260˚C, IV 340˚C, V 400˚C), szybkie nagrzewanie, żaroodporny ceramiczny kamień niepodatny na zabrudzenia, timer z sygnałem dźwiękowym, czas pieczenia świeżej pizzy 4 min, czas pieczenia mrożonej pizzy 3 min, średnica wewnętrzna 30 cm, wymiary 34x30x19 cm"
+    },
+    {
+      "id": 5,
+      "flour": "Ariete piec 5",
+      "name": "Ariete-piec-5",
+      "category": "Sprzęt",
+      "desc": "Piec do pizzy, moc 1200 W"
     }
   ]
 }
