@@ -4,7 +4,7 @@ import ContactPage from "./page/contactPage";
 import MainPage from "./page/mainPage";
 import ShopPage from "./page/shopPage";
 import CalculatorPage from "./page/calculatorPage";
-import SinglePage from "./page/singlePage";
+import SingleProductPage from "./page/singleProductPage";
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="calculator" element={<CalculatorPage />} />
-        <Route path="shop" element={<ShopPage />} />
-        <Route path="shop/:name" element={<SinglePage />} />
-        <Route path="contact" element={<ContactPage />} />
+        <Route path="kalkulator" element={<CalculatorPage />} />
+        <Route path="sklep" element={<ShopPage />} />
+        <Route path="sklep/produkt/:name" element={<SingleProductPage />} />
+        <Route path="kontakt" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );

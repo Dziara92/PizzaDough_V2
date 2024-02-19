@@ -1,25 +1,10 @@
-import { useState, useEffect } from "react";
+import { useContextShop } from "../utility/contextShop";
 import Loading from "../components/loading";
 import Products from "../components/products";
-import fetchProducts from "../utility/fetchProducts";
-
-const linkData = "http://localhost:3001/produkty";
 
 const ShopPage = () => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [dataProduct, setDataProduct] = useState([]);
-  const [itemProducts, setItemProducts] = useState([]);
-
-  useEffect(() => {
-    fetchProducts(
-      linkData,
-      setDataProduct,
-      setItemProducts,
-      setLoading,
-      setError
-    );
-  }, []);
+  const { dataProduct, itemProducts, error, loading, setItemProducts } =
+    useContextShop();
 
   const filterCategory = (e) => {
     let value = e.target.value;
@@ -65,7 +50,7 @@ const ShopPage = () => {
         {loading ? (
           <Loading />
         ) : (
-          <div className="flex  mt-10 flex-wrap">
+          <div className="flex flex-col mt-10 flex-wrap">
             {itemProducts.map((item) => {
               return <Products key={item.id} {...item} />;
             })}

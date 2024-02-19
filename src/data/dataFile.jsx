@@ -2,16 +2,16 @@ export const menu = [
   {
     id: 1,
     name: "Kalkulator ciasta",
-    url: "/calculator",
+    url: "/kalkulator",
   },
   {
     id: 2,
     name: "Sklep",
-    url: "/shop",
+    url: "/sklep",
   },
   {
     id: 3,
     name: "Kontakt",
-    url: "/contact",
+    url: "/kontakt",
   },
 ];
