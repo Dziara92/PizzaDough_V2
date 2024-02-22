@@ -9,7 +9,7 @@ const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
     <div
       className={
         isOpenMenu
-          ? "transition-all duration-300 absolute top-[131px] right-0 bg-buttonBgc w-[100%]   xsm:top-[96px] md:hidden"
+          ? "transition-all duration-300 absolute z-50 top-[131px] right-0 bg-buttonBgc w-[100%]   xsm:top-[96px] md:hidden"
           : "transition-all duration-300 absolute top-[131px] -right-[500px] bg-buttonBgc w-[100%] xsm:top-[96px] xsm:-right-[800px] md:hidden"
       }
     >
