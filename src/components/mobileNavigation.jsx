@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { menu } from "../data/dataFile";
+import { IconBasket } from "../assets/iconBasket";
+import { useBasketContext } from "../utility/basketContext";
 const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
+  const { basketQty } = useBasketContext();
   return (
     <div
       className={
@@ -10,7 +13,7 @@ const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
           : "transition-all duration-300 absolute top-[131px] -right-[500px] bg-buttonBgc w-[100%] xsm:top-[96px] xsm:-right-[800px] md:hidden"
       }
     >
-      <ul className="w-1/2 mx-auto my-[20px] flex flex-col items-center justify-center gap-4 text-lg  font-semibold bg-buttonBgc">
+      <ul className="w-1/2 mx-auto my-[20px] flex flex-col items-center justify-center gap-4 text-lg  font-semibold ">
         {menu.map((menu) => {
           return (
             <Link to={menu.url} key={menu.id}>
@@ -24,6 +27,16 @@ const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
           );
         })}
       </ul>
+      <Link to="koszyk" onClick={() => setIsOpenMenu(!isOpenMenu)}>
+        <button className="flex mx-auto my-5 text-white gap-[4px]">
+          <IconBasket />
+          {basketQty > 0 ? (
+            <span className=" bg-black rounded-[20%] leading-none p-1 ">
+              {basketQty}
+            </span>
+          ) : null}
+        </button>
+      </Link>
     </div>
   );
 };

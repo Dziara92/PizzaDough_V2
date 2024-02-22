@@ -1,13 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContextShop } from "../utility/contextShop";
 import Loading from "../components/loading";
 import Products from "../components/products";
+import { useEffect } from "react";
 
 const ShopPage = () => {
   const { dataProduct, itemProducts, error, loading, setItemProducts } =
     useContextShop();
 
+  useEffect(() => {
+    setItemProducts(dataProduct);
+  }, []);
+
   const filterCategory = (e) => {
     let value = e.target.value;
+
     if (value === "All") {
       setItemProducts(dataProduct);
     }
