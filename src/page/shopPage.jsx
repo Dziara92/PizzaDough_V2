@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useContextShop } from "../utility/contextShop";
+import { useContextShop } from "../context/contextShop";
 import Loading from "../components/loading";
 import Products from "../components/products";
 import { useEffect } from "react";

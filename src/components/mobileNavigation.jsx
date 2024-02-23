@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { menu } from "../data/dataFile";
 import { IconBasket } from "../assets/iconBasket";
-import { useBasketContext } from "../utility/basketContext";
+import { useBasketContext } from "../context/basketContext";
 const MobileNavigation = ({ isOpenMenu, setIsOpenMenu }) => {
   const { basketQty } = useBasketContext();
   return (

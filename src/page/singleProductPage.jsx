@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useContextShop } from "../utility/contextShop";
-import { useBasketContext } from "../utility/basketContext";
+import { useContextShop } from "../context/contextShop";
+import { useBasketContext } from "../context/basketContext";
 import Loading from "../components/loading";
 import { ArrowUP, ArrowDown } from "../assets/arrows";
 import { useState } from "react";
@@ -8,26 +8,36 @@ const SingleProductPage = () => {
   const { dataProduct, loading } = useContextShop();
   const { addProductToBasket } = useBasketContext();
   const { nameUrl } = useParams();
-  const [itemsQty, setItemsQty] = useState(1);
+  const [amount, setAmount] = useState(1);
 
   const onChangeHandleItemsQty = (e) => {
     let numValue = parseInt(e.target.value);
     if (numValue >= quantity) {
-      setItemsQty(quantity);
+      setAmount(quantity);
       return;
     } else {
-      setItemsQty(numValue);
+      setAmount(numValue);
     }
   };
 
   const handleItemsQty = (e) => {
     let nameTarget = e.currentTarget.name;
     if (nameTarget === "plus") {
-      if (itemsQty >= quantity) return;
-      setItemsQty(itemsQty + 1);
+      setAmount((oldAmount) => {
+        let newAmount = oldAmount + 1;
+        if (newAmount > quantity) {
+          newAmount = quantity;
+        }
+        return newAmount;
+      });
     } else {
-      if (itemsQty <= 1) return;
-      setItemsQty(itemsQty - 1);
+      setAmount((oldAmount) => {
+        let newAmount = oldAmount - 1;
+        if (newAmount < 1) {
+          newAmount = 1;
+        }
+        return newAmount;
+      });
     }
   };
   if (loading) {
@@ -37,9 +47,9 @@ const SingleProductPage = () => {
       </div>
     );
   }
-  const { name, desc, quantity, price, id } = dataProduct.find(
-    (product) => product.nameUrl === nameUrl
-  );
+
+  const product = dataProduct.find((product) => product.nameUrl === nameUrl);
+  const { name, desc, quantity, price, id } = product;
   return (
     <div className=" container mx-auto my-9 px-7">
       <h1 className=" my-7 text-center text-2xl">{name}</h1>
@@ -49,11 +59,11 @@ const SingleProductPage = () => {
       <div className="flex items-center  gap-2 my-8 sm:w-3/4 sm:mx-auto ">
         <div className="flex items-center border w-2/4 h-14 ">
           <input
-            className="input-num w-[50%] text-xl text-[#707070] ml-4"
+            className="input-num w-[50%] text-xl text-[#707070] ml-4 outline-none"
             type="number"
             min="1"
             max={quantity}
-            value={itemsQty}
+            value={amount}
             onChange={(e) => onChangeHandleItemsQty(e)}
           />
           <div className="flex flex-col w-[50%] h-14 justify-center items-center border-l">
@@ -76,7 +86,7 @@ const SingleProductPage = () => {
         <p className="w-1/4 text-[#707070]">szt.</p>
         <button
           className=" transition-colors duration-300 bg-buttonBgc text-white text-2xl w-3/4 h-14 rounded hover:bg-red-700"
-          onClick={() => addProductToBasket(id)}
+          onClick={() => addProductToBasket(id, amount, product)}
         >
           Zamów
         </button>

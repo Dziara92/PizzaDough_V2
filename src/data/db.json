@@ -7,7 +7,7 @@
       "category": "Mąka",
       "desc": "Mąka Pizzeria typu 00 Caputo to rewelacyjna mąka pochodząca z Włoch dedykowana pizzy neapolitańskiej. Jest tak drobno mielona, że wygląda jak śnieżny pył. To mąka z elastycznym glutenem najlepsza do ciasta, które wymaga długiej fermentacji.",
       "quantity": 31,
-      "price": "9,50 zł"
+      "price": 9.5
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "category": "Mąka",
       "desc": "Mąka pszenna zaprojektowana do przygotowywania tradycyjnych włoskich wypieków, takich jak pizza i focaccia. Jej właściwości sprawiają, że ciasto staje się elastyczne i łatwe do uformowania w cienkie krążki na pizzę lub płaski placek na focaccię. ",
       "quantity": 90,
-      "price": "9,50 zł"
+      "price": 9.5
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "category": "Mąka",
       "desc": "Mąka Pizzeria typu 00 Caputo to rewelacyjna mąka pochodząca z Włoch dedykowana pizzy neapolitańskiej. Jest tak drobno mielona, że wygląda jak śnieżny pył. To mąka z elastycznym glutenem najlepsza do ciasta, które wymaga długiej fermentacji.",
       "quantity": 70,
-      "price": "9,50 zł"
+      "price": 9.5
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "category": "Sprzęt",
       "desc": "Piec do pizzy, moc 1200 W, 5 poziomów pieczenia (I 120˚C, II 180˚C, III 260˚C, IV 340˚C, V 400˚C), szybkie nagrzewanie, żaroodporny ceramiczny kamień niepodatny na zabrudzenia, timer z sygnałem dźwiękowym, czas pieczenia świeżej pizzy 4 min, czas pieczenia mrożonej pizzy 3 min, średnica wewnętrzna 30 cm, wymiary 34x30x19 cm",
       "quantity": 23,
-      "price": "450 zł"
+      "price": 450
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "category": "Sprzęt",
       "desc": "Piec do pizzy, moc 1200 W",
       "quantity": 2,
-      "price": "400 zł"
+      "price": 400
     }
   ]
 }
