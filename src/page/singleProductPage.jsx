@@ -50,6 +50,7 @@ const SingleProductPage = () => {
 
   const product = dataProduct.find((product) => product.nameUrl === nameUrl);
   const { name, desc, quantity, price, id } = product;
+
   return (
     <div className=" container mx-auto my-9 px-7">
       <h1 className=" my-7 text-center text-2xl">{name}</h1>

@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 
 import { reducer } from "../utility/reducer";
 
@@ -27,14 +27,13 @@ const BasketContextProvider = ({ children }) => {
     dispatch({ type: "REMOVE_PRODUCT", payload: { id } });
   };
 
-  const changeAmountProduct = (e, id, amount) => {
-    let targetName = e.currentTarget.name;
-    if (targetName === "plus") {
-      dispatch({ type: "INCREASE_AMOUNT", payload: { id, amount } });
-    } else {
-      dispatch({ type: "DECREASE_AMOUNT", payload: { id, amount } });
-    }
+  const changeAmountProduct = (id, value) => {
+    dispatch({ type: "TOGGLE_AMOUNT", payload: { id, value } });
   };
+
+  useEffect(() => {
+    dispatch({ type: "TOTAL_AMOUNT" });
+  }, [state.basket]);
 
   return (
     <BasketContext.Provider

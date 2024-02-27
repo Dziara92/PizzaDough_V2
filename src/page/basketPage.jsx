@@ -5,6 +5,7 @@ const BasketPage = () => {
   const {
     basket,
     basketQty,
+    total_amount,
     changeAmountProduct,
     removeProductFromBasket,
     cleanBasket,
@@ -38,8 +39,8 @@ const BasketPage = () => {
                 <button
                   className="border-r w-[25%] h-full"
                   name="plus"
-                  onClick={(e) => {
-                    changeAmountProduct(e, product.id, product.amount);
+                  onClick={() => {
+                    changeAmountProduct(product.id, "plus");
                   }}
                 >
                   +
@@ -48,8 +49,8 @@ const BasketPage = () => {
                 <button
                   className=" border-l w-[25%] h-full"
                   name="minus"
-                  onClick={(e) => {
-                    changeAmountProduct(e, product.id, product.amount);
+                  onClick={() => {
+                    changeAmountProduct(product.id, "minus");
                   }}
                 >
                   -
@@ -62,6 +63,8 @@ const BasketPage = () => {
           </div>
         );
       })}
+
+      <p>{total_amount}</p>
       <div className="flex justify-between">
         <Link to="/sklep">
           <button className=" bg-buttonBgc my-5 mr- py-2 px-4 rounded text-white hover:bg-red-700 transition-colors duration-300">
