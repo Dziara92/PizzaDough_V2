@@ -2,12 +2,13 @@
   "produkty": [
     {
       "id": 1,
-      "name": "Mąka pszenna typu 00 Pizzeria 1kg Caputo Nr 1 na świecie!",
+      "name": "Mąka pszenna typu 00 Pizzeria 1kg Caputo",
       "nameUrl": "Mąka-pszenna-typu-00-Pizzeria-1kg-Caputo-Nr-1-na-świecie!",
       "category": "Mąka",
       "desc": "Mąka Pizzeria typu 00 Caputo to rewelacyjna mąka pochodząca z Włoch dedykowana pizzy neapolitańskiej. Jest tak drobno mielona, że wygląda jak śnieżny pył. To mąka z elastycznym glutenem najlepsza do ciasta, które wymaga długiej fermentacji.",
       "quantity": 31,
-      "price": 9.5
+      "price": 9.5,
+      "img": "../../public/Caputo_Pizzeria_Red.png"
     },
     {
       "id": 2,
@@ -16,34 +17,68 @@
       "category": "Mąka",
       "desc": "Mąka pszenna zaprojektowana do przygotowywania tradycyjnych włoskich wypieków, takich jak pizza i focaccia. Jej właściwości sprawiają, że ciasto staje się elastyczne i łatwe do uformowania w cienkie krążki na pizzę lub płaski placek na focaccię. ",
       "quantity": 90,
-      "price": 9.5
+      "price": 9.5,
+      "img": "../../public/Pizza_Focaccia_00_Midi.png"
     },
     {
       "id": 3,
-      "name": "Mąka pszenna typ 00 Pizzeria 5kg Caputo",
-      "nameUrl": "Mąka-pszenna-typ-00-Pizzeria-5kg-Caputo",
+      "name": "Mąka Caputo pszenna Tipo-1",
+      "nameUrl": "Caputo-maka-pszenna-tipo-1",
       "category": "Mąka",
       "desc": "Mąka Pizzeria typu 00 Caputo to rewelacyjna mąka pochodząca z Włoch dedykowana pizzy neapolitańskiej. Jest tak drobno mielona, że wygląda jak śnieżny pył. To mąka z elastycznym glutenem najlepsza do ciasta, które wymaga długiej fermentacji.",
       "quantity": 70,
-      "price": 9.5
+      "price": 9.5,
+      "img": "../../public/Caputo-maka-pszenna-tipo-1.png"
     },
     {
       "id": 4,
-      "name": "Ariete piec",
-      "nameUrl": "Ariete-piec",
+      "name": "Piec do pizzy Ariete 909 1200W",
+      "nameUrl": "Ariete-piec-909-1200W",
       "category": "Sprzęt",
       "desc": "Piec do pizzy, moc 1200 W, 5 poziomów pieczenia (I 120˚C, II 180˚C, III 260˚C, IV 340˚C, V 400˚C), szybkie nagrzewanie, żaroodporny ceramiczny kamień niepodatny na zabrudzenia, timer z sygnałem dźwiękowym, czas pieczenia świeżej pizzy 4 min, czas pieczenia mrożonej pizzy 3 min, średnica wewnętrzna 30 cm, wymiary 34x30x19 cm",
       "quantity": 23,
-      "price": 450
+      "price": 450,
+      "img": "../../public/Ariete-piec-909-1200W.png"
     },
     {
       "id": 5,
-      "name": "Ariete piec 5",
-      "nameUrl": "Ariete-piec-5",
+      "name": "Piec do pizzy Ooni Koda 16 UU",
+      "nameUrl": "Piec-do-pizzy-Ooni-Koda-16-UU",
       "category": "Sprzęt",
-      "desc": "Piec do pizzy, moc 1200 W",
+      "desc": "Palnik gazowy w kształcie litery L z płomieniem z efektem wodospadu, Wbudowany zapłon gazowy dla szybkiego i łatwego gotowania, Składane nóżki ułatwiające transport i przechowywanie",
       "quantity": 2,
-      "price": 400
+      "price": 400,
+      "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
+    },
+    {
+      "id": 6,
+      "name": "Piec do pizzy Ooni Koda 16 UU",
+      "nameUrl": "Piec-do-pizzy-Ooni-Koda-16-UU",
+      "category": "Sprzęt",
+      "desc": "Palnik gazowy w kształcie litery L z płomieniem z efektem wodospadu, Wbudowany zapłon gazowy dla szybkiego i łatwego gotowania, Składane nóżki ułatwiające transport i przechowywanie",
+      "quantity": 2,
+      "price": 400,
+      "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
+    },
+    {
+      "id": 7,
+      "name": "Piec do pizzy Ooni Koda 16 UU",
+      "nameUrl": "Piec-do-pizzy-Ooni-Koda-16-UU",
+      "category": "Sprzęt",
+      "desc": "Palnik gazowy w kształcie litery L z płomieniem z efektem wodospadu, Wbudowany zapłon gazowy dla szybkiego i łatwego gotowania, Składane nóżki ułatwiające transport i przechowywanie",
+      "quantity": 2,
+      "price": 400,
+      "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
+    },
+    {
+      "id": 8,
+      "name": "Piec do pizzy Ooni Koda 16 UU",
+      "nameUrl": "Piec-do-pizzy-Ooni-Koda-16-UU",
+      "category": "Sprzęt",
+      "desc": "Palnik gazowy w kształcie litery L z płomieniem z efektem wodospadu, Wbudowany zapłon gazowy dla szybkiego i łatwego gotowania, Składane nóżki ułatwiające transport i przechowywanie",
+      "quantity": 2,
+      "price": 400,
+      "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
     }
   ]
 }

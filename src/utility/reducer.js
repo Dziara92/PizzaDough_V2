@@ -25,6 +25,7 @@ export const reducer = (state, action) => {
         amount,
         price: product.price,
         maxInStock: product.quantity,
+        img: product.img,
       };
       return {
         ...state,

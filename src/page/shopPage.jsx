@@ -41,12 +41,12 @@ const ShopPage = () => {
   }
 
   return (
-    <div className="container mx-auto my-9 px-[5px] w-4/5">
-      <h1 className=" animate-slideDown text-center mb-8 text-3xl font-semibold">
+    <div className="container mx-auto my-9 px-[5px] w-4/5 md:mt-20 ">
+      <h1 className=" animate-slideDown text-center mb-8 text-3xl font-semibold md:text-5xl md:mb-16">
         Sklep
       </h1>
-      <div className="container">
-        <div className=" flex flex-row justify-center items-center gap-4 mb-6">
+      <div className="container  lg:w-11/12 lg:mx-auto ">
+        <div className=" flex flex-row justify-center items-center gap-4 mb-6 lg:w-2/4 lg:mx-auto ">
           <p className=" font-semibold">Kategorie:</p>
           <select className=" block px-3 py-2 w-2/4" onChange={filterCategory}>
             <option value="All">Wszystko</option>
@@ -57,10 +57,12 @@ const ShopPage = () => {
         {loading ? (
           <Loading />
         ) : (
-          <div className="flex flex-col mt-10 flex-wrap">
-            {itemProducts.map((item) => {
-              return <Products key={item.id} {...item} />;
-            })}
+          <div className="w-[98%] mx-auto">
+            <div className="flex flex-col mt-10 flex-wrap  md:flex-row md:justify-center md:gap-[2px] lg:justify-normal">
+              {itemProducts.map((item) => {
+                return <Products key={item.id} {...item} />;
+              })}
+            </div>
           </div>
         )}
       </div>

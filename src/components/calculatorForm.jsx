@@ -20,7 +20,10 @@ const CalculatorForm = ({ setResult }) => {
   };
 
   return (
-    <form className="flex flex-col  mx-auto" onSubmit={handleCalculate}>
+    <form
+      className="flex flex-col  mx-auto lg:w-3/4"
+      onSubmit={handleCalculate}
+    >
       <label htmlFor="pizza_style" className=" mb-1">
         Rodzaj pizzy
       </label>
@@ -71,7 +74,7 @@ const CalculatorForm = ({ setResult }) => {
         onChange={(e) => handleNumberForm(e, setdoughMoisture)}
         className=" mb-5 p-1 bg-white border-[1px] rounded"
       />
-      <button className=" transition ease-linear duration-150 w-2/5 px-3 py-2 my-5 bg-buttonBgc font-semibold text-white self-center rounded hover:bg-red-700 ">
+      <button className=" transition ease-linear duration-150 w-2/5 px-3 py-2 my-5 bg-buttonBgc font-semibold text-white self-center rounded hover:bg-red-700 lg:w-1/5 ">
         Przelicz
       </button>
     </form>

@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="bg-primaryBgc py-3 relative ">
       <div className="container flex flex-col justify-center items-center xsm:flex-row xsm:justify-between xsm:items-center mx-auto px-[5px] ">
-        <div>
+        <div onClick={() => setIsOpenMenu(false)}>
           <Link to="/">
             <h1 className="text-white text-2xl text-center py-5 font-primaryFont">
               Pizza dough calculators

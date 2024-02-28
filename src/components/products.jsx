@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-const Products = ({ name, category, desc, nameUrl }) => {
+const Products = ({ name, category, desc, nameUrl, img }) => {
   const shortDesc = (desc) => {
     let text = desc.split("");
     if (text.length > 120) {
@@ -11,12 +11,16 @@ const Products = ({ name, category, desc, nameUrl }) => {
     }
   };
   return (
-    <div className="p-5 border-[1px] mb-3 border-slate-200 rounded">
+    <div className="p-5 border-[1px] mb-3 border-slate-200 rounded md:w-[49%] lg:w-[33%]">
       <Link to={`${nameUrl}`}>
         <h2 className=" font-semibold text-xl mb-5 hover:text-zinc-800 transition-colors duration-300 ">
           {name}
         </h2>
       </Link>
+
+      <div className="my-8">
+        <img src={img} alt={name} className=" w-3/5 mx-auto lg:w-2/5" />
+      </div>
       <p className="mb-4">
         <span className=" font-semibold ">Kategoria:</span> {category}
       </p>
