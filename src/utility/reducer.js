@@ -79,7 +79,7 @@ export const reducer = (state, action) => {
       (total, currentValue) => {
         total.basketQty += currentValue.amount;
         total.total_amount += currentValue.amount * currentValue.price;
-        console.log(total);
+
         return total;
       },
       { basketQty: 0, total_amount: 0 }

@@ -1,6 +1,7 @@
 import { useBasketContext } from "../context/basketContext";
-import { IconTrash } from "../assets/iconTrash";
 import { Link } from "react-router-dom";
+import ProductInBasket from "../components/productInBasket";
+import TotalAmaunts from "../components/totalAmaunts";
 const BasketPage = () => {
   const {
     basket,
@@ -30,41 +31,16 @@ const BasketPage = () => {
       <div>{basketQty}</div>
       {basket.map((product) => {
         return (
-          <div key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.amount * product.price}</p>
-
-            <div className="flex flex-col">
-              <div className="flex items-center border w-2/4 mx-auto mt-5 h-8">
-                <button
-                  className="border-r w-[25%] h-full"
-                  name="plus"
-                  onClick={() => {
-                    changeAmountProduct(product.id, "plus");
-                  }}
-                >
-                  +
-                </button>
-                <p className=" w-[50%] text-center">{product.amount}</p>
-                <button
-                  className=" border-l w-[25%] h-full"
-                  name="minus"
-                  onClick={() => {
-                    changeAmountProduct(product.id, "minus");
-                  }}
-                >
-                  -
-                </button>
-              </div>
-              <button onClick={() => removeProductFromBasket(product.id)}>
-                <IconTrash />
-              </button>
-            </div>
-          </div>
+          <ProductInBasket
+            key={product.id}
+            product={product}
+            changeAmountProduct={changeAmountProduct}
+            removeProductFromBasket={removeProductFromBasket}
+          />
         );
       })}
 
-      <p>{total_amount}</p>
+      <TotalAmaunts total={total_amount} />
       <div className="flex justify-between">
         <Link to="/sklep">
           <button className=" bg-buttonBgc my-5 mr- py-2 px-4 rounded text-white hover:bg-red-700 transition-colors duration-300">
