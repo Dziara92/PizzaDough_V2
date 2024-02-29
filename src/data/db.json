@@ -79,6 +79,26 @@
       "quantity": 2,
       "price": 400,
       "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
+    },
+    {
+      "id": 9,
+      "name": "Piec do pizzy Ooni Koda 16 UU",
+      "nameUrl": "Piec-do-pizzy-Ooni-Koda-16-UU",
+      "category": "Sprzęt",
+      "desc": "Palnik gazowy w kształcie litery L z płomieniem z efektem wodospadu, Wbudowany zapłon gazowy dla szybkiego i łatwego gotowania, Składane nóżki ułatwiające transport i przechowywanie",
+      "quantity": 2,
+      "price": 400,
+      "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
+    },
+    {
+      "id": 10,
+      "name": "Piec do pizzy Ooni Koda 16 UU",
+      "nameUrl": "Piec-do-pizzy-Ooni-Koda-16-UU",
+      "category": "Sprzęt",
+      "desc": "Palnik gazowy w kształcie litery L z płomieniem z efektem wodospadu, Wbudowany zapłon gazowy dla szybkiego i łatwego gotowania, Składane nóżki ułatwiające transport i przechowywanie",
+      "quantity": 2,
+      "price": 400,
+      "img": "../../public/Piec-do-pizzy-Ooni-Koda-16-UU.png"
     }
   ]
 }

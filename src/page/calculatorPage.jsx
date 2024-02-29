@@ -12,10 +12,14 @@ const CalculatorPage = () => {
       <CalculatorForm setResult={setResult} />
       {result && (
         <div className=" my-4 mx-auto px-[8px] border-[1px] py-1 rounded animate-slideDown lg:w-3/4">
-          <p className=" font-semibold pb-2">Mąka: {result.flour}</p>
-          <p className=" font-semibold pb-2"> Woda: {result.watter}</p>
-          <p className=" font-semibold pb-2">Sól: {result.salt}</p>
-          <p className=" font-semibold">Drożdże: {result.yeast}</p>
+          <h4 className=" font-semibold  my-5 md:text-2xl">Potrzebujesz:</h4>
+          <hr className="  mb-5" />
+          <p className=" font-semibold pb-2 md:text-xl">Mąka: {result.flour}</p>
+          <p className=" font-semibold pb-2 md:text-xl">
+            Woda: {result.watter}
+          </p>
+          <p className=" font-semibold pb-2 md:text-xl">Sól: {result.salt}</p>
+          <p className=" font-semibold md:text-xl">Drożdże: {result.yeast}</p>
         </div>
       )}
     </div>

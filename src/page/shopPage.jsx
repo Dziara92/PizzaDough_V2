@@ -2,31 +2,56 @@
 import { useContextShop } from "../context/contextShop";
 import Loading from "../components/loading";
 import Products from "../components/products";
-import { useEffect } from "react";
+import Pagination from "../components/pagination";
+import { useEffect, useState } from "react";
 
 const ShopPage = () => {
   const { dataProduct, itemProducts, error, loading, setItemProducts } =
     useContextShop();
+  const [page, setPage] = useState(2);
+  const [limit, setLimit] = useState(6);
+
+  const pagenation = (page, limit, productsArray) => {
+    if (productsArray.length < limit) {
+      page = 1;
+    }
+    let tempArray = [];
+    for (let i = (page - 1) * limit; i < page * limit; i++) {
+      if (productsArray.length - 1 < i) {
+        i = productsArray.length;
+        return tempArray;
+      }
+      tempArray.push(productsArray[i]);
+      console.log(tempArray);
+    }
+    return tempArray;
+  };
+
+  const getLength = (arry) => {
+    console.log(arry.length);
+  };
 
   useEffect(() => {
-    setItemProducts(dataProduct);
+    // setItemProducts(dataProduct);
+    setItemProducts(pagenation(page, limit, dataProduct));
   }, []);
 
   const filterCategory = (e) => {
     let value = e.target.value;
 
     if (value === "All") {
-      setItemProducts(dataProduct);
+      setItemProducts(pagenation(page, limit, dataProduct));
     }
 
     if (value === "Mąka") {
       const newProduct = dataProduct.filter((item) => item.category === value);
-      setItemProducts(newProduct);
+      getLength(newProduct);
+      setItemProducts(pagenation(page, limit, newProduct));
     }
 
     if (value === "Sprzęt") {
       const newProduct = dataProduct.filter((item) => item.category === value);
-      setItemProducts(newProduct);
+      setItemProducts(pagenation(page, limit, newProduct));
     }
   };
 
@@ -65,6 +90,7 @@ const ShopPage = () => {
             </div>
           </div>
         )}
+        <Pagination dataProduct={dataProduct} />
       </div>
     </div>
   );

@@ -3,12 +3,13 @@ import { useContextShop } from "../context/contextShop";
 import { useBasketContext } from "../context/basketContext";
 import Loading from "../components/loading";
 import { ArrowUP, ArrowDown } from "../assets/arrows";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const SingleProductPage = () => {
   const { dataProduct, loading } = useContextShop();
   const { addProductToBasket } = useBasketContext();
   const { nameUrl } = useParams();
   const [amount, setAmount] = useState(1);
+  const [addToBasket, setAddToBasket] = useState(false);
 
   const onChangeHandleItemsQty = (e) => {
     let numValue = parseInt(e.target.value);
@@ -40,6 +41,17 @@ const SingleProductPage = () => {
       });
     }
   };
+
+  useEffect(() => {
+    let timer;
+    timer = setTimeout(() => {
+      setAddToBasket(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [addToBasket]);
+
   if (loading) {
     return (
       <div className=" container mx-auto my-9 px-7">
@@ -97,9 +109,18 @@ const SingleProductPage = () => {
             </div>
             <p className="w-1/4 text-[#707070]">szt.</p>
             <button
-              className=" transition-colors duration-300 bg-buttonBgc text-white text-2xl w-3/4 h-14 rounded hover:bg-red-700"
-              onClick={() => addProductToBasket(id, amount, product)}
+              className=" transition-colors duration-300 bg-buttonBgc text-white text-2xl w-3/4 h-14 rounded hover:bg-red-700 relative"
+              onClick={() => {
+                addProductToBasket(id, amount, product), setAddToBasket(true);
+              }}
             >
+              <span
+                className={`w-4/5 absolute -top-[80px] left-2/4 -translate-x-2/4 py-2 px-4 rounded bg-amber-400 text-sm transition-opacity duration-300 opa opacity-0 xsm:-top-[60px] md:-top-[80px] lg:-top-[60px] 2xl:-top-[40px] ${
+                  addToBasket && "opacity-100"
+                }`}
+              >
+                Produkt dodany do koszyka!
+              </span>
               Zamów
             </button>
           </div>
