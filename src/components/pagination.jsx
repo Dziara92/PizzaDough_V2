@@ -51,7 +51,7 @@ const Pagination = ({
           }`}
           onClick={prevPage}
         >
-          <ArrowPrev />
+          <ArrowPrev prop={"w-6 h-6"} />
         </button>
         {pageNumbersRender()}
         <button
@@ -61,7 +61,7 @@ const Pagination = ({
           }`}
           onClick={nextPage}
         >
-          <ArrowNext />
+          <ArrowNext prop={"w-6 h-6"} />
         </button>
       </ul>
     </div>

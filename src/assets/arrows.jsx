@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export const ArrowUP = () => {
   return (
     <svg
@@ -36,7 +37,7 @@ export const ArrowDown = () => {
   );
 };
 
-export const ArrowPrev = () => {
+export const ArrowPrev = ({ prop = "" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +45,7 @@ export const ArrowPrev = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className={` ${prop} `}
     >
       <path
         strokeLinecap="round"
@@ -55,7 +56,7 @@ export const ArrowPrev = () => {
   );
 };
 
-export const ArrowNext = () => {
+export const ArrowNext = ({ prop }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +64,7 @@ export const ArrowNext = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className={` ${prop} `}
     >
       <path
         strokeLinecap="round"
