@@ -3,55 +3,37 @@ import { useContextShop } from "../context/contextShop";
 import Loading from "../components/loading";
 import Products from "../components/products";
 import Pagination from "../components/pagination";
+
 import { useEffect, useState } from "react";
 
 const ShopPage = () => {
   const { dataProduct, itemProducts, error, loading, setItemProducts } =
     useContextShop();
-  const [page, setPage] = useState(2);
-  const [limit, setLimit] = useState(6);
-
-  const pagenation = (page, limit, productsArray) => {
-    if (productsArray.length < limit) {
-      page = 1;
-    }
-    let tempArray = [];
-    for (let i = (page - 1) * limit; i < page * limit; i++) {
-      if (productsArray.length - 1 < i) {
-        i = productsArray.length;
-        return tempArray;
-      }
-      tempArray.push(productsArray[i]);
-      console.log(tempArray);
-    }
-    return tempArray;
-  };
-
-  const getLength = (arry) => {
-    console.log(arry.length);
-  };
+  const itemPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    // setItemProducts(dataProduct);
-    setItemProducts(pagenation(page, limit, dataProduct));
+    setItemProducts(dataProduct);
   }, []);
 
   const filterCategory = (e) => {
     let value = e.target.value;
 
     if (value === "All") {
-      setItemProducts(pagenation(page, limit, dataProduct));
+      setCurrentPage(1);
+      setItemProducts(dataProduct);
     }
 
     if (value === "Mąka") {
       const newProduct = dataProduct.filter((item) => item.category === value);
-      getLength(newProduct);
-      setItemProducts(pagenation(page, limit, newProduct));
+      setCurrentPage(1);
+      setItemProducts(newProduct);
     }
 
     if (value === "Sprzęt") {
       const newProduct = dataProduct.filter((item) => item.category === value);
-      setItemProducts(pagenation(page, limit, newProduct));
+      setCurrentPage(1);
+      setItemProducts(newProduct);
     }
   };
 
@@ -84,13 +66,23 @@ const ShopPage = () => {
         ) : (
           <div className="w-[98%] mx-auto">
             <div className="flex flex-col mt-10 flex-wrap  md:flex-row md:justify-center md:gap-[2px] lg:justify-normal">
-              {itemProducts.map((item) => {
-                return <Products key={item.id} {...item} />;
-              })}
+              {itemProducts
+                .slice(
+                  (currentPage - 1) * itemPerPage,
+                  currentPage * itemPerPage
+                )
+                .map((item) => {
+                  return <Products key={item.id} {...item} />;
+                })}
             </div>
           </div>
         )}
-        <Pagination dataProduct={dataProduct} />
+        <Pagination
+          itemProducts={itemProducts}
+          itemPerPage={itemPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );
