@@ -63,13 +63,13 @@ const Slider = ({ slides }) => {
             >
               <img src={img} className="w-full h-full block object-cover  " />
               <div
-                className={`transition-opacity duration-700 delay-150 absolute top-[50%] -translate-y-1/2 t left-36 bg-black/[.4]  w-[50%] z-20 p-4  rounded-xl text-neutral-50 
+                className={`transition-opacity duration-700 delay-150 absolute top-[50%] -translate-y-1/2 left-[50%] -translate-x-1/2 bg-black/[.4]  w-[50%] z-20 p-4  rounded-xl text-neutral-50 
               ${currentIndexSlide === i ? "opacity-1" : "opacity-0"}`}
               >
-                <h2 className=" text-3xl mb-3">{heading}</h2>
-                <p className=" mb-4">{text}</p>
+                <h2 className=" text-xl mb-3 md:text-3xl">{heading}</h2>
+                <p className=" hidden mb-4 sm:block ">{text}</p>
                 <Link to={url}>
-                  <button className=" transition-colors text-l tracking-wider uppercase bg-amber-400 py-2 px-4 rounded hover:bg-amber-500">
+                  <button className=" transition-colors text-sm sm:text-base tracking-wider uppercase bg-amber-400 py-2 px-2 rounded hover:bg-amber-500">
                     {txtBtn}
                   </button>
                 </Link>
