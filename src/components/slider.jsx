@@ -20,13 +20,24 @@ const Slider = ({ slides }) => {
     });
   };
 
-  // useEffect(() => {
-  //   let timer;
-  //   timer = setTimeout(() => {
-  //     nextSlide();
-  //   }, 3000);
-  //   return clearTimeout(timer);
-  // });
+  useEffect(() => {
+    const lastIndex = slides.length - 1;
+    if (currentIndexSlide < 0) {
+      setCurrentIndexSlide(lastIndex);
+    }
+    if (currentIndexSlide > lastIndex) {
+      setCurrentIndexSlide(0);
+    }
+  }, [currentIndexSlide, slides.length]);
+
+  useEffect(() => {
+    let idInterval = setInterval(() => {
+      setCurrentIndexSlide(currentIndexSlide + 1);
+    }, 6000);
+    return () => {
+      clearInterval(idInterval);
+    };
+  }, [currentIndexSlide]);
 
   return (
     <div className=" w-full h-96 bg-black relative overflow-hidden ">
