@@ -9,10 +9,14 @@ I have created simple website for pizza lovers where you can count ingredients f
 In this project I used first time Tailwind for styling.
 
 ### Built with:
-Semantic HTML5</br>
-Tailwind</br>
-Flexbox</br>
-JavaScript</br>
-React</br>
-Mobile-first workflow</br>
-Vite</br>
+<ul>
+  <li>Semantic HTML5</li>
+  <li>Tailwind</li>
+  <li>Flexbox</li>
+  <li>React</li>
+  <li>Mobile-first workflow</li>
+  <li>Vite</li>
+</ul>
+
+
+
