@@ -10,10 +10,10 @@ In this project I used first time Tailwind for styling.
 
 ### Built with:
 
-    Semantic HTML5
-    Tailwind
-    Flexbox
-    JavaScript
-    React
-    Mobile-first workflow
-    Vite
+Semantic HTML5
+Tailwind
+Flexbox
+JavaScript
+React
+Mobile-first workflow
+Vite
