@@ -6,6 +6,7 @@ import ShopPage from "./page/shopPage";
 import CalculatorPage from "./page/calculatorPage";
 import SingleProductPage from "./page/singleProductPage";
 import BasketPage from "./page/basketPage";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="koszyk" element={<BasketPage />} />
         <Route path="kontakt" element={<ContactPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
