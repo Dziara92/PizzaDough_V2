@@ -1,6 +1,4 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# PizzaDough_V2 - React + Vite
 
 ### About the project:
 
