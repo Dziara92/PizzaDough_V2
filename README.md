@@ -2,7 +2,18 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### About the project:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I have created simple website for pizza lovers where you can count ingredients for best dough. On the website we can find basic functions shop created for practicing ReactJS.
+
+In this project I used first time Tailwind for styling.
+
+### Built with:
+
+    Semantic HTML5
+    Tailwind
+    Flexbox
+    JavaScript
+    React
+    Mobile-first workflow
+    Vite
